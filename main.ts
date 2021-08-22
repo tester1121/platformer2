@@ -7,6 +7,11 @@ namespace SpriteKind {
     export const HintPortal = SpriteKind.create()
     export const TextBox = SpriteKind.create()
 }
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (car.vy == 0) {
+        car.vy = -150
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Coin, function (sprite, otherSprite) {
     info.changeScoreBy(1)
     otherSprite.destroy()
